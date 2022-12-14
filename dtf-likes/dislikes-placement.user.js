@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         New Userscript
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @namespace    https://github.com/EqueTheSlayer/dtf-fix/
+// @updateURL   https://github.com/EqueTheSlayer/dtf-fix/raw/master/dtf-likes/dislikes-placement.meta.js
+// @downloadURL https://github.com/EqueTheSlayer/dtf-fix/raw/master/dtf-likes/dislikes-placement.user.js
+// @version      1
 // @description  try to take over the world!
-// @author       You
-// @match        https://dtf.ru/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @author       Ilyuha
+// @include     *://*.dtf.ru*
+// @include     *://dtf.ru/*
 // @grant        none
 // ==/UserScript==
 
