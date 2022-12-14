@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Dtf like fix",
+  "version": "1.0",
+  "description": "Перенос лайка к диСлайку",
+  "content_scripts": [
+    {
+      "matches": [ "https://dtf.ru/*" ],
+      "css": [ "style.css" ]
+    }
+  ]
+}
