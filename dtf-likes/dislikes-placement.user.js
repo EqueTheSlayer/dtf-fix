@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         DTF likes placement
 // @namespace    https://github.com/EqueTheSlayer/dtf-fix/
 // @updateURL   https://github.com/EqueTheSlayer/dtf-fix/raw/master/dtf-likes/dislikes-placement.meta.js
 // @downloadURL https://github.com/EqueTheSlayer/dtf-fix/raw/master/dtf-likes/dislikes-placement.user.js
