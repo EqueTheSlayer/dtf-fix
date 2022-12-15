@@ -54,7 +54,8 @@
 
 .comment--with-no-replies .comment__load-more {
     order: 1 !important;
-    margin-top: 0 !important;
+    width: 100%;
+    margin-left: auto;
 }
 
 .comment .like-button--action-like {
