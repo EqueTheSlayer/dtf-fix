@@ -36,12 +36,12 @@
 }
 
 .comment__content .like-button--action-like {
-    order: 3;
+    order: -1;
     margin-left: 16px;
 }
 
 .comment__content .like-button--action-dislike {
-    order: 2;
+    order: -2;
 }
 
 .comment__content .comment__action {
