@@ -69,6 +69,8 @@
       padding: 5px 10px;
       border-radius: 10px;
       font-size: 20px;
+      position: relative;
+      top: -3px;
     }
 
     .гфд {
