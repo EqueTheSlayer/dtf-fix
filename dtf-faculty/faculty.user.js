@@ -66,6 +66,9 @@
     .faculty {
       background: black;
       color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 20px;
     }
 
     .гфд {
@@ -74,8 +77,8 @@
     }
 
     .кгв {
-       background: #076692;
-       color: #C9C9C7;
+       background: #18213C;
+       color: #ffab58;
     }
 
     .пфд {
