@@ -56,7 +56,7 @@
                         break;
                 }
 
-                name.innerHTML = `${name.textContent}<span class="faculty ${data?.faculty}">${data?.faculty ? data.faculty : cohort}</div>`;
+                name.innerHTML = `${name.textContent}<span class="faculty ${data?.faculty}">${cohort}</div>`;
 
             });
         }
