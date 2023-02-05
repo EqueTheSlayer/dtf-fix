@@ -38,7 +38,7 @@
                 const name = document.querySelector('.v-header-title__name');
                 let cohort = '';
 
-                switch (data.faculty) {
+                switch (data?.faculty) {
                     case 'гфд':
                         cohort = 'Гриффиндор';
                         break;
