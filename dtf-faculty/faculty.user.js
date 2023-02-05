@@ -8,22 +8,15 @@
 // @author       Ilyuha
 // @include     *://*.dtf.ru*
 // @include     *://dtf.ru/*
-// @grant        none
+// @grant        noneи
 // ==/UserScript==
 
 (function() {
     'use strict';
-    setTimeout(() => {
-        const meta = document.createElement('meta');
-        meta.httpEquiv = "Content-Security-Policy";
-        meta.content = "upgrade-insecure-requests";
-        document.getElementsByTagName('head')[0].appendChild(meta);
-    }, 1500);
 
     setTimeout(() => {
         if (window.location.pathname.startsWith('/u/')) {
             const userId = window.location.pathname.substr(3);
-
             const faculty = fetch('https://ilyuha-developer.ru/server/get-user', {
                 method: 'POST',
                 headers: {
@@ -33,7 +26,6 @@
             })
 
             faculty.then(item => item.json()).then(data => {
-
                 //запрос в переменную - переменную подставлеем вместо (магл) на 21 строке
                 const name = document.querySelector('.v-header-title__name');
                 let cohort = '';
