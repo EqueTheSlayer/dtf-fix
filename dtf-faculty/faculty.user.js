@@ -87,8 +87,8 @@
     }
 
     .сзр {
-       background: #2B7858;
-       color: #91A099;
+       background: #1E813E;
+       color: #f3f3f3;
     }
 `);
 })();
