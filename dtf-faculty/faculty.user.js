@@ -24,7 +24,7 @@
         if (window.location.pathname.startsWith('/u/')) {
             const userId = window.location.pathname.substr(3);
 
-            const faculty = fetch('https://cors-anywhere.herokuapp.com/http://ilyuha-developer.ru/server/get-user', {
+            const faculty = fetch('https://ilyuha-developer.ru/server/get-user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
