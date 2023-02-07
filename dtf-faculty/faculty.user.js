@@ -51,13 +51,17 @@
                         break;
                 }
 
-                name.innerHTML = `${name.textContent}<span class="faculty ${data?.faculty}">${cohort}</div>`;
+                name.innerHTML = `<span class="name">${name.textContent}</span> <div class="faculty-wrapper"><span class="faculty ${data?.faculty}">${cohort}</span></div>`;
 
             });
         }
     }, 2000);
 
     addGlobalStyle(`
+    .name {
+      margin-right: 10px;
+    }
+
     .faculty {
       background: linear-gradient(
         90deg,
@@ -75,11 +79,51 @@
     );
       color: white;
       padding: 5px 10px;
-      border-radius: 10px;
+      border-radius: 5px;
       font-size: 20px;
       position: relative;
-      top: -3px;
+      top: -5px;
+      text-shadow: black 1px 0 10px;
     }
+
+    .faculty-wrapper {
+      width: 150px;
+      height: 52px;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .faculty:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 90px;
+  margin-left: 50px;
+  background: #fff;
+  background: white;
+  opacity: 0.3;
+  left: 0;
+  top: -30px;
+  z-index: 1;
+  transform: rotate(45deg);
+  position: absolute;
+  animation: movingFlare 5s ease-in-out 0.05s infinite;
+}
+
+@keyframes movingFlare {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
 
     .гфд {
        background: #721E1C;
@@ -104,6 +148,16 @@
     .абн {
        background: black;
        color: white;
+    }
+
+    .v-header-title__name {
+       display: flex;
+       flex-wrap: wrap;
+       white-space: normal !important;
+    }
+
+    .v-header-title__name  {
+
     }
 `);
 })();
