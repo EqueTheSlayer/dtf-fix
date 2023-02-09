@@ -11,50 +11,95 @@
 // @grant        noneи
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     setTimeout(() => {
-        if (window.location.pathname.startsWith('/u/')) {
-            const userId = window.location.pathname.substr(3);
-            const faculty = fetch('https://ilyuha-developer.ru/server/get-user', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({name: userId})
-            })
+        const userPostId = window.location.pathname.split('/').pop().split('-')[0];
+        const userId = window.location.pathname.substr(3);
+        if (userPostId) {
+            const request = fetch(`https://api.dtf.ru/v1.8/entry/${userPostId}/comments/popular`);
+            const faculties = fetch('https://ilyuha-developer.ru/server/get-all-users').then(response => response.json());
 
-            faculty.then(item => item.json()).then(data => {
-                //запрос в переменную - переменную подставлеем вместо (магл) на 21 строке
-                const name = document.querySelector('.v-header-title__name');
-                let cohort = '';
+            const comments = request.then(response => response.json());
 
-                switch (data?.faculty) {
-                    case 'гфд':
-                        cohort = 'Гриффиндор';
-                        break;
-                    case 'кгв':
-                        cohort = 'Когтевран';
-                        break;
-                    case 'пфд':
-                        cohort = 'Пуффендуй';
-                        break;
-                    case 'сзр':
-                        cohort = 'Слизерин';
-                        break;
-                    case 'абн':
-                        cohort = 'Азкабан';
-                        break;
-                    default:
-                        cohort = 'Магл';
-                        break;
-                }
+            comments.then(data => {
+                const name = document.querySelectorAll('.comment__author');
+                name.forEach(userName => {
+                    data?.result.forEach(user => {
+                        faculties.then(data2 => {
+                            data2.usersArray.forEach(item => {
+                                if (item.name.split('-')[0] == user.author.id) {
+                                    if (userName.textContent.trim() === user.author.name) {
+                                        let cohort = '';
 
-                name.innerHTML = `<span class="name">${name.textContent}</span> <div class="faculty-wrapper"><span class="faculty ${data?.faculty}">${cohort}</span></div>`;
-
+                                        switch (item?.faculty) {
+                                            case 'гфд':
+                                                cohort = 'Гриффиндор';
+                                                break;
+                                            case 'кгв':
+                                                cohort = 'Когтевран';
+                                                break;
+                                            case 'пфд':
+                                                cohort = 'Пуффендуй';
+                                                break;
+                                            case 'сзр':
+                                                cohort = 'Слизерин';
+                                                break;
+                                            case 'абн':
+                                                cohort = 'Азкабан';
+                                                break;
+                                            default:
+                                                cohort = 'Магл';
+                                                break;
+                                        }
+                                        console.log(cohort);
+                                        userName.innerHTML = `${userName.textContent}<span class="faculty commentaries ${item?.faculty}">${cohort}</span>`;
+                                    }
+                                }
+                            });
+                        });
+                    });
+                });
             });
+
         }
+        const faculty = fetch('https://ilyuha-developer.ru/server/get-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name: userId})
+        });
+        faculty.then(item => item.json()).then(data => {
+            //запрос в переменную - переменную подставлеем вместо (магл)
+            const name = document.querySelector('.v-header-title__name');
+            let cohort = '';
+
+            switch (data?.faculty) {
+                case 'гфд':
+                    cohort = 'Гриффиндор';
+                    break;
+                case 'кгв':
+                    cohort = 'Когтевран';
+                    break;
+                case 'пфд':
+                    cohort = 'Пуффендуй';
+                    break;
+                case 'сзр':
+                    cohort = 'Слизерин';
+                    break;
+                case 'абн':
+                    cohort = 'Азкабан';
+                    break;
+                default:
+                    cohort = 'Магл';
+                    break;
+            }
+
+            name.innerHTML = `<span class="name">${name.textContent}</span> <div class="faculty-wrapper"><span class="faculty ${data?.faculty}">${cohort}</span></div>`;
+
+        });
     }, 2000);
 
     addGlobalStyle(`
@@ -84,6 +129,12 @@
       position: relative;
       top: -5px;
       text-shadow: black 1px 0 10px;
+    }
+
+    .commentaries {
+       font-size: 10px;
+       top: 0px;
+       padding: 2px 5px;
     }
 
     .faculty-wrapper {
@@ -165,7 +216,9 @@
 function addGlobalStyle(css) {
     var head, style;
     head = document.getElementsByTagName('head')[0];
-    if (!head) { return; }
+    if (!head) {
+        return;
+    }
     style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = css;
