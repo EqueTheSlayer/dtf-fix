@@ -11,11 +11,37 @@
 // @grant        noneи
 // ==/UserScript==
 
-(function () {
-    'use strict';
+(function (history) {
+    const pushState = history.pushState;
+    history.pushState = function (state) {
+        if (typeof history.onpushstate == "function") {
+            history.onpushstate({state: state});
+        }
 
-    if (window.location.pathname.startsWith('/u/')) {
-        setTimeout(() => {
+        renderBadge();
+        return pushState.apply(history, arguments);
+    };
+})(window.history);
+
+(function () {
+    renderBadge();
+})()
+
+function addGlobalStyle(css) {
+    var head, style;
+    head = document.getElementsByTagName('head')[0];
+    if (!head) {
+        return;
+    }
+    style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = css;
+    head.appendChild(style);
+}
+
+function renderBadge() {
+    setTimeout(() => {
+        if (window.location.pathname.startsWith('/u/')) {
             const userId = window.location.pathname.substr(3);
             const faculty = fetch('https://ilyuha-developer.ru/server/get-user', {
                 method: 'POST',
@@ -52,15 +78,17 @@
                         cohort = 'Азкабан';
                         break;
                     default:
-                        cohort = 'Магл';
                         break;
                 }
+                const alreadyBadged = document.querySelector('.faculty-wrapper');
+
+                if (alreadyBadged) return;
 
                 name.innerHTML = `<span class="name">${name.textContent}</span> <div class="faculty-wrapper"><span class="faculty ${data?.faculty}">${cohort}</span></div>`;
 
             });
-        }, 1000);
-    }
+        }
+    }, 3000);
 
     addGlobalStyle(`
     .name {
@@ -170,16 +198,4 @@
 
     }
 `);
-})();
-
-function addGlobalStyle(css) {
-    var head, style;
-    head = document.getElementsByTagName('head')[0];
-    if (!head) {
-        return;
-    }
-    style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = css;
-    head.appendChild(style);
 }
