@@ -29,6 +29,12 @@
                 const name = document.querySelector('.v-header-title__name');
                 let cohort = 'Магл';
 
+                if (data?.userId === '23790') {
+                    cohort = 'Ебучий пидорас';
+                    name.innerHTML = `<span class="name">${name.textContent}</span> <div class="faculty-wrapper"><span class="faculty ${data?.faculty}">${cohort}</span></div>`;
+                    return;
+                }
+
                 switch (data?.faculty) {
                     case 'гфд':
                         cohort = 'Гриффиндор';
@@ -92,7 +98,6 @@
     }
 
     .faculty-wrapper {
-      width: 150px;
       height: 52px;
       overflow: hidden;
       display: inline-block;
