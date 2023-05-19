@@ -81,8 +81,8 @@ function addGlobalStyle(css) {
 .icon--ui_badge_plus {
    background: url('https://media.discordapp.net/stickers/1104760402719551599.png?size=240');
    background-size: cover;
-   height: 25px !important;
-   width: 25px !important;
+   height: 30px !important;
+   width: 30px !important;
 }
 
 /* Ник Пользователя */
