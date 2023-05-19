@@ -2121,8 +2121,8 @@ a.comment__avatar:hover + a.comment__author,
 
 .navigation-user-profile__toggle:hover,
 .site-header-burger:hover {
-    fill: var(--text-color-blue);
-    opacity: 1;
+    fill: var(--text-color-blue) !important;
+    opacity: 1 !important;
 }
 
 .item--selected {
@@ -3801,10 +3801,6 @@ input[type="color" i] {
 
 .archive-item:hover {
     opacity: 1
-}
-
-body a:hover {
-    color: var(--text-color-red)
 }
 
 .archive-item:hover .archive-item__title {
