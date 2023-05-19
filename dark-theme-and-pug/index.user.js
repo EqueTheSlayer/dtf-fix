@@ -3720,7 +3720,6 @@ input[type="color" i] {
 .sidebar-tree-list-item--active,
 .sidebar-tree-list-item--active:not(.sidebar-tree-list-item--with-active-child) .sidebar-tree-list-item__icon,
 .sidebar-tree-list-item__child-item--active,
-.site-header-burger:hover,
 .head-notifies__toggler:hover .icon,
 .navigation-user-profile__toggle:hover,
 .ui-rounded-button--active .ui-rounded-button__link,
