@@ -10,7 +10,6 @@
 // @include     *://dtf.ru/*
 // @grant        none
 // ==/UserScript==
-// ==/UserScript==
 
 function addGlobalStyle(css) {
     var head, style;
@@ -3824,7 +3823,614 @@ body a:hover {
 }
 
 }
+if alternativePost{
+    .content-header-repost {
+        font-size: 12px;
+    }
 
+    .content-header-repost .icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+}
+
+if alternativeSidebars {
+    .sidebar,
+    .sidebar__footer,
+    .layout__right-column,
+    .sidebar-tree-list__show-more-button {
+        background-color: var(--color-01ev) !important;
+    }
+
+    .sidebar-tree-list-item--active,
+    .sidebar-tree-list-item:hover,
+    .sidebar-tree-list-item__child-item:hover,
+    .u-notification--blue.u-notification--bg,
+    .u-notification--green.u-notification--bg,
+    .u-notification--red.u-notification--bg {
+        background-color: var(--hover-01ev) !important;
+    }
+}
+
+if imgBrightness {
+    .andropov_image__inner img, .andropov_video, .gall__item, .block-person .andropov_image {
+        filter: brightness(0.6);
+        transition: filter, 0.5s;
+    }
+
+    .andropov_image__inner img:hover, .entry_wrapper:hover .andropov_image__inner img, .entry_wrapper:hover .andropov_video, .andropov_video:hover, .gall__item:hover, .content-feed:hover .andropov_image img, .content-feed:hover .andropov_video, .block-person .andropov_image:hover {
+        filter: brightness(1);
+        transition: filter, 0.5s;
+    }
+}
+
+if editorHeaderTop {
+    @media (min-width: 1025px) {
+        .writing__footer {
+            order: unset;
+            align-items: end;
+            height: 50px;
+        }
+
+        .writing-footer {
+            height: 50px;
+        }
+
+        .editor-cp-tab__content {
+            top: auto;
+            bottom: auto;
+        }
+
+        .editor-cp-tab--active .editor-cp-tab__label:after {
+            bottom: 0;
+            top: auto;
+        }
+    }
+}
+
+if reversedEditorButtons {
+    @media (min-width: 1025px) {
+        .writing-footer__content,
+        .writing-footer__left {
+            flex-direction: row-reverse;
+        }
+
+        .writing-footer__left {
+            margin-right: 0;
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+
+        .writing-footer__right {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+
+        .editor-cp-tab__label {
+            padding: 0;
+        }
+
+        .writing-footer__autosave {
+            width: 120px;
+        }
+    }
+}
+
+if showHideBlockButton {
+    .ce-block-indicator--hidden {
+        display: block;
+    }
+}
+
+if alternativeHiddenBlock {
+    .block-hidden-wrapper::before, .block-hidden {
+        background-color: transparent !important;
+    }
+
+    .block-hidden {
+        backdrop-filter: blur(36px);
+    }
+
+    .block-hidden__text {
+        display: none;
+    }
+
+    .block-hidden-wrapper {
+        min-height: 36px;
+        margin-bottom: 5px;
+    }
+
+    .block-hidden__button {
+        background-color: var(--color-03ev);
+        padding: 5px 10px;
+        border-radius: 8px;
+        color: var(--text-color-title) !important;
+        box-shadow: rgba(8, 8, 8, 0.25) 0px 6px 12px -2px, rgba(8, 8, 8, 0.3) 0px 3px 7px -3px !important;
+        height: 34px;
+    }
+
+    .block-hidden__button:hover {
+        color: var(--text-color-title) !important;
+    }
+
+    .block-hidden__button:active {
+        transform: translateY(1px);
+    }
+}
+
+if oldAvatars {
+    .comment__avatar__image,
+    .subsite-card__avatar,
+    .site-header-container .navigation-user-profile__avatar-image {
+        border-radius: 7px;
+    }
+
+    .user-card__avatar,
+    .subsite__image {
+        border-radius: 7px !important;
+    }
+}
+
+if alternativeThreads {
+    .comment__branch--hidden {
+        visibility: inherit;
+    }
+
+    .comment__branch--no-border {
+        height: auto;
+    }
+
+    .comment__branch--highlighted {
+        border-color: var(--text-color-blue);
+        box-shadow: inset 1px 0 0 0 var(--text-color-blue);
+        -webkit-box-shadow: inset 1px 0 0 0 var(--text-color-blue);
+    }
+}
+
+if hideAllFeedSidebar {
+    .sidebar-tree-list-item[href="/new"],
+    .sidebar-tree-list-item[href="/popular"] {
+        display: none;
+    }
+}
+
+if hideTrashSidebar {
+    .sidebar-tree-list-item[href="/cabinet"],
+    .sidebar-tree-list-item[href="/job"],
+    .sidebar-tree-list-item[href="/rating"],
+    .sidebar-tree-list-item[href="/subs"],
+    .sidebar-tree-list-item[href="/events"],
+    .sidebar-tree-list-item[href="/companies"] {
+        display: none;
+    }
+}
+
+if hideDonate {
+    .site-header .support {
+        display: none !important;
+    }
+}
+
+if hideRecommendations {
+        .recommendation-feed {
+            display: none;
+        }
+}
+
+if alternativeAccountMenu {
+    .account-menu__title {
+        margin-bottom: 2px !important;
+    }
+
+    @media (min-width: 720px) {
+        .account-menu__items-group {
+            margin-top: 2px !important;
+        }
+    }
+
+    .account-menu__subsite-wrapper,
+    .account-menu__button-wrapper,
+    .account-menu__item-wrapper {
+        padding: 0px 0px !important;
+    }
+
+    .account-menu__subsite-wrapper:not(:last-child),
+    .account-menu__button-wrapper:not(:last-child),
+    .account-menu__item-wrapper:not(:last-child) {
+        margin-bottom: 2px !important;
+    }
+
+    [data-gtm="Account — Exit — Click"] {
+        color: var(--text-color-red) !important;
+    }
+
+    .navigation-user__account-menu {
+        width: auto !important;
+        max-width: 300px;
+    }
+
+    .account-menu__item {
+        min-width: 230px;
+    }
+    @media (min-width: 720px) {
+        .user-card__avatar {
+            width: 28px !important;
+            height: 28px !important;
+        }
+    }
+
+    .user-card__text {
+        color: var(--text-color-gray) !important;
+        font-weight: 400 !important;
+    }
+}
+
+if alternativeQuoteBlock {
+    .block-quote__content {
+        background-color: var(--hover-01ev);
+        border-radius: 8px;
+        padding: 24px 12px;
+        grid-template-columns: 36px auto;
+        max-width: 600px;
+        row-gap: 16px;
+    }
+
+    .block-quote__content .icon {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+}
+
+@-moz-document domain("dtf.ru") {
+if alternativeLikes {
+    .content-footer__item:first-child {
+        order: 5;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .like-button--action-like .like-button__icon {
+        margin-right: 0;
+    }
+
+    .like-button--action-like .like-button__count {
+        margin-left: 10px;
+    }
+
+    .content-footer__item--right {
+        order: 6;
+        margin-left: 0px;
+    }
+
+    .comment__action {
+        order: 10;
+    }
+
+    .comment__content .like-button--action-like {
+        order: 12;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .comment__content .like-button--action-dislike {
+        order: 13;
+        margin-left: 0;
+    }
+
+    .comment__action--etc {
+        order: 11;
+        margin-left: 0;
+    }
+    
+    .comments_counter__count:first-child {
+        order: 2;
+    }
+    
+    .comments_counter__count:last-child {
+        order: 1;
+        margin-right: 4px;
+    }
+    
+    .comments_counter--num .comments_counter__count__value {
+        margin-left: 4px !important;
+    }
+
+    .comments_counter__count__value_new {
+        margin-left: 0 !important;
+    }
+
+    .comment--with-no-replies .comment__load-more {
+        order:  14;
+        flex-basis: 100%;
+    }   
+}
+
+}
+
+@-moz-document domain("vc.ru") {
+:root {
+    --back-color-blue-button: #af4448;
+    --blue-button-hover: #ba6b6c;
+    --site-color: #ffa4a2;
+    --primary-color: var(--site-color);
+    --switchers-color: var(--site-color);
+}
+
+.sidebar-tree-list-item--active,
+.sidebar-tree-list-item--active:not(.sidebar-tree-list-item--with-active-child) .sidebar-tree-list-item__icon,
+.sidebar-tree-list-item__child-item--active,
+.site-header-burger:hover,
+.head-notifies__toggler:hover .icon,
+.navigation-user-profile__toggle:hover,
+.ui-rounded-button--active .ui-rounded-button__link,
+.content-editorial-tick,
+.site-header-logo:hover,
+.navigation-user-login:hover,
+.quiz__panel__button,
+.quiz__panel__button__label,
+.quiz__item__voted__count,
+.page--plus .plus-features__item .icon,
+.block-quote__content .icon {
+    color: var(--site-color) !important;
+}
+
+.bookmarks .ui-rounded-button__link,
+.sorting-filters .ui-rounded-button__link {
+    color: var(--text-color-title) !important;
+}
+
+.sidebar__footer__item--sponsor span,
+.v-tab--active .v-tab__label::after,
+.quiz__item__progressbar__runner,
+.quiz__item__progressbar,
+.ui-tab--active .ui-tab__label:after {
+    background-color: var(--site-color) !important;
+}
+
+.v-radio:hover .v-radio__control,
+.v-checkbox:hover .v-checkbox__control {
+    -webkit-box-shadow: 0 0 0 3px rgba(175, 68, 72, 0.12);
+    box-shadow: 0 0 0 3px rgba(175, 68, 72, 0.12);
+}
+
+.v-field--focused .v-field__wrapper,
+.comment-form--focused {
+    -webkit-box-shadow: 0 0 0 3px rgba(175, 68, 72, 0.12) !important;
+    box-shadow: 0 0 0 3px rgba(175, 68, 72, 0.12) !important;
+}
+
+.sidebar__footer__item--sponsor span {
+    -webkit-text-fill-color: var(--site-color) !important;
+}
+
+.st0 {
+    fill: var(--text-color-gray) !important;
+}
+
+.head-notifies--showed .head-notifies__toggler .icon,
+.head-notifies__toggler:hover .icon,
+.navigation-user-profile__toggle:hover,
+.site-header-burger:hover {
+    fill: var(--site-color) !important;
+}
+
+.new-entries-horizon svg [data-accent-color-stroke] {
+    stroke: var(--site-color);
+}
+
+#ui_flag2 path {
+    stroke: var(--text-color-gray) !important;
+}
+
+.widget_wrapper--type-pink .widget_wrapper__item {
+    border-color: var(--border-color) !important;
+}
+
+.quiz__item__check {
+    border-color: var(--site-color);
+}
+
+.quiz__panel__button__label {
+    border-color: var(--site-color);
+}
+
+.v-plus-badge {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(-41%, #e57373), color-stop(7%, #e57373), to(#af4448));
+    background-image: linear-gradient(90deg, #e57373 -41%, #e57373 7%, #af4448 100%);
+}
+
+.plus-badge {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(-41%, #e57373), color-stop(7%, #e57373), to(#af4448));
+    background-image: linear-gradient(90deg, #e57373 -41%, #e57373 7%, #af4448 100%);
+}
+
+.v-button--plus {
+    background-image: linear-gradient(72.98deg, #e57373 0%, #af4448 25%, #8b373a 100%);
+}
+
+.v-button--plus:hover {
+    background-image: linear-gradient(-72.98deg, #e57373 0%, #af4448 25%, #8b373a 100%);
+}
+
+}
+
+@-moz-document domain("tjournal.ru") {
+:root {
+    color-scheme: dark;
+    
+    --back-color-blue-button: #f9a825;
+    --blue-button-hover: #fbc02d;
+    
+    --text-color-gray: rgba(255, 255, 255, 0.69);
+    --text-color-title: rgba(255, 255, 255, 0.87);
+    --text-color-blue: #AAB6FE;
+    --text-color-minor: rgba(255, 255, 255, 0.38);
+    --text-color-red: #ff5857;
+    
+    --color-00ev: #121212;
+    --color-01ev: #1e1e1e;
+    --color-12ev: #333333;
+    
+    --hover-01ev: #272727;
+    
+    --color-brand: var(--back-color-blue-button);
+    --color-bg-backdrop: var(--color-00ev);
+    --color-bg-primary: var(--color-01ev);
+    --color-text-primary: var(--text-color-gray);
+    --color-text-link: var(--text-color-blue);
+    --color-text-secondary: var(--text-color-minor);
+}
+
+.stub h1,
+.content-header__title,
+.post__title,
+.block-header {
+    color: var(--text-color-title)
+}
+
+.app__header {
+    background-color: var(--color-12ev)
+}
+
+.archive-item:hover {
+    opacity: 1
+}
+
+body a:hover {
+    color: var(--text-color-red)
+}
+
+.archive-item:hover .archive-item__title {
+    color: var(--text-color-blue)
+}
+
+.block-warning {
+    background-color: var(--hover-01ev)
+}
+
+}
+
+@-moz-document domain("instagram.com") {
+:root {
+    --text-color-gray: rgba(255, 255, 255, 0.69);
+    --text-color-title: rgba(255, 255, 255, 0.87);
+    --text-color-blue: #AAB6FE;
+    --text-color-minor: rgba(255, 255, 255, 0.38);
+    --text-color-red: #ff5857;
+    --back-color-blue-button: #534bae;
+    --blue-button-hover: #49599a;
+    --color-04ev: #272727;
+    --color-06ev: #2c2c2c;
+}
+
+html[stylus-iframe*="dtf.ru"] body,
+html[stylus-iframe*="tjournal.ru"] body,
+html[stylus-iframe*="vc.ru"] body,
+html[stylus-iframe*="dtf.ru"] .AvatarContainer,
+html[stylus-iframe*="tjournal.ru"] .AvatarContainer,
+html[stylus-iframe*="vc.ru"] .AvatarContainer,
+html[stylus-iframe*="dtf.ru"] .PrimaryCTA,
+html[stylus-iframe*="tjournal.ru"] .PrimaryCTA,
+html[stylus-iframe*="vc.ru"] .PrimaryCTA {
+    background-color: var(--color-04ev) !important;
+}
+
+html[stylus-iframe*="dtf.ru"] .HoverCard .HoverCardRoot,
+html[stylus-iframe*="tjournal.ru"] .HoverCard .HoverCardRoot,
+html[stylus-iframe*="vc.ru"] .HoverCard .HoverCardRoot {
+    background-color: var(--color-06ev);
+}
+
+html[stylus-iframe*="dtf.ru"] .UsernameText,
+html[stylus-iframe*="tjournal.ru"] .UsernameText,
+html[stylus-iframe*="vc.ru"] .UsernameText,
+html[stylus-iframe*="dtf.ru"] .PrimaryCTA a,
+html[stylus-iframe*="tjournal.ru"] .PrimaryCTA a,
+html[stylus-iframe*="vc.ru"] .PrimaryCTA a,
+html[stylus-iframe*="dtf.ru"] .SocialProof a,
+html[stylus-iframe*="tjournal.ru"] .SocialProof a,
+html[stylus-iframe*="vc.ru"] .SocialProof a,
+html[stylus-iframe*="dtf.ru"] .HoverCardUserName .Username,
+html[stylus-iframe*="tjournal.ru"] .HoverCardUserName .Username,
+html[stylus-iframe*="vc.ru"] .HoverCardUserName .Username {
+    color: var(--text-color-title);
+}
+
+html[stylus-iframe*="dtf.ru"] .FollowerCountText,
+html[stylus-iframe*="tjournal.ru"] .FollowerCountText,
+html[stylus-iframe*="vc.ru"] .FollowerCountText,
+html[stylus-iframe*="dtf.ru"] .HoverCardStatus span,
+html[stylus-iframe*="tjournal.ru"] .HoverCardStatus span,
+html[stylus-iframe*="vc.ru"] .HoverCardStatus span,
+html[stylus-iframe*="dtf.ru"] a.CommentInput,
+html[stylus-iframe*="tjournal.ru"] a.CommentInput,
+html[stylus-iframe*="vc.ru"] a.CommentInput {
+    color: var(--text-color-minor);
+}
+
+html[stylus-iframe*="dtf.ru"] .UsernameText:hover,
+html[stylus-iframe*="tjournal.ru"] .UsernameText:hover,
+html[stylus-iframe*="vc.ru"] .UsernameText:hover {
+    color: var(--text-color-blue);
+}
+
+html[stylus-iframe*="dtf.ru"] a.ViewProfileButton,
+html[stylus-iframe*="tjournal.ru"] a.ViewProfileButton,
+html[stylus-iframe*="vc.ru"] a.ViewProfileButton,
+html[stylus-iframe*="dtf.ru"] a.FollowButton,
+html[stylus-iframe*="tjournal.ru"] a.FollowButton,
+html[stylus-iframe*="vc.ru"] a.FollowButton {
+    background-color: var(--back-color-blue-button);
+}
+
+html[stylus-iframe*="dtf.ru"] a.ViewProfileButton:hover,
+html[stylus-iframe*="tjournal.ru"] a.ViewProfileButton:hover,
+html[stylus-iframe*="vc.ru"] a.ViewProfileButton:hover,
+html[stylus-iframe*="dtf.ru"] a.FollowButton:hover,
+html[stylus-iframe*="tjournal.ru"] a.FollowButton:hover,
+html[stylus-iframe*="vc.ru"] a.FollowButton:hover {
+    background-color: var(--blue-button-hover);
+}
+
+html[stylus-iframe*="dtf.ru"] a:active,
+html[stylus-iframe*="tjournal.ru"] a:active,
+html[stylus-iframe*="vc.ru"] a:active {
+    opacity: 1;
+}
+
+html[stylus-iframe*="dtf.ru"] .VerifiedSprite,
+html[stylus-iframe*="tjournal.ru"] .VerifiedSprite,
+html[stylus-iframe*="vc.ru"] .VerifiedSprite {
+    filter: hue-rotate(370deg) brightness(130%) saturate(40%)
+}
+
+html[stylus-iframe*="dtf.ru"] .Feedback a,
+html[stylus-iframe*="tjournal.ru"] .Feedback a,
+html[stylus-iframe*="vc.ru"] .Feedback a,
+html[stylus-iframe*="dtf.ru"] .Glyph,
+html[stylus-iframe*="tjournal.ru"] .Glyph,
+html[stylus-iframe*="vc.ru"] .Glyph {
+    filter: invert(1) opacity(69%);
+}
+
+html[stylus-iframe*="dtf.ru"] .PrimaryCTA,
+html[stylus-iframe*="tjournal.ru"] .PrimaryCTA,
+html[stylus-iframe*="vc.ru"] .PrimaryCTA,
+html[stylus-iframe*="dtf.ru"] .Footer,
+html[stylus-iframe*="tjournal.ru"] .Footer,
+html[stylus-iframe*="vc.ru"] .Footer {
+    border-color: var(--text-color-minor);
+}
+
+}
+
+@-moz-document url-prefix("https://api.dtf.ru/"), url-prefix("https://api.tjournal.ru/"), url-prefix("https://api.vс.ru/") {
+body {
+    color: var(--text-color-gray);
+}
 `
     )
 })();
