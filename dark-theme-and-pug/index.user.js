@@ -1,12 +1,15 @@
 // ==UserScript==
-// @name         спиздил темную тему в тамперманки
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @name         DTF факультеты хогвартса
+// @namespace    https://github.com/EqueTheSlayer/dtf-fix/
+// @updateURL    https://github.com/EqueTheSlayer/dtf-fix/raw/master/dark-theme-and-pug/index.meta.js
+// @downloadURL  https://github.com/EqueTheSlayer/dtf-fix/raw/master/dark-theme-and-pug/index.user.js
+// @version      1
 // @description  try to take over the world!
 // @author       илюха
-// @match        https://dtf.ru/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=dtf.ru
+// @include     *://*.dtf.ru*
+// @include     *://dtf.ru/*
 // @grant        none
+// ==/UserScript==
 // ==/UserScript==
 
 function addGlobalStyle(css) {

@@ -5,7 +5,7 @@
 // @downloadURL https://github.com/EqueTheSlayer/dtf-fix/raw/master/dtf-faculty/faculty.user.js
 // @version      1
 // @description  try to take over the world!
-// @author       Ilyuha
+// @author       илюха
 // @include     *://*.dtf.ru*
 // @include     *://dtf.ru/*
 // @grant        noneи
