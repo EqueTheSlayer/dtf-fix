@@ -3768,13 +3768,6 @@ input[type="color" i] {
     fill: var(--text-color-gray) !important;
 }
 
-.head-notifies--showed .head-notifies__toggler .icon,
-.head-notifies__toggler:hover .icon,
-.navigation-user-profile__toggle:hover,
-.site-header-burger:hover {
-    fill: var(--site-color) !important;
-}
-
 .new-entries-horizon svg [data-accent-color-stroke] {
     stroke: var(--site-color);
 }
