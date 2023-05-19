@@ -2106,7 +2106,7 @@ a.comment__avatar:hover + a.comment__author,
 }
 
 .site-header-logo:hover {
-    color: var(--text-color-blue);
+    color: var(--text-color-blue) !important;
 }
 
 .navigation-profile__toggle:hover {
@@ -3720,11 +3720,8 @@ input[type="color" i] {
 .sidebar-tree-list-item--active,
 .sidebar-tree-list-item--active:not(.sidebar-tree-list-item--with-active-child) .sidebar-tree-list-item__icon,
 .sidebar-tree-list-item__child-item--active,
-.head-notifies__toggler:hover .icon,
-.navigation-user-profile__toggle:hover,
 .ui-rounded-button--active .ui-rounded-button__link,
 .content-editorial-tick,
-.site-header-logo:hover,
 .navigation-user-login:hover,
 .quiz__panel__button,
 .quiz__panel__button__label,
