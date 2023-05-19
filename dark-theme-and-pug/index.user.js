@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         DTF факультеты хогвартса
+// @name         темная тема + мопс
 // @namespace    https://github.com/EqueTheSlayer/dtf-fix/
 // @updateURL    https://github.com/EqueTheSlayer/dtf-fix/raw/master/dark-theme-and-pug/index.meta.js
 // @downloadURL  https://github.com/EqueTheSlayer/dtf-fix/raw/master/dark-theme-and-pug/index.user.js
