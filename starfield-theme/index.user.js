@@ -39,6 +39,7 @@ function addGlobalStyle(css) {
         --blue: rgba(21,75,121,1);
         --blue-light: rgba(21,75,121,0.3);
         --gold: #b39a49;
+        --silver: #A4A9A3;
     }
     
     .icon--ui_badge_plus * {
@@ -341,8 +342,24 @@ announcement-stats,
     border-radius: 0 !important;
 }
 
-.sidebar-tree-list-item--active {
+.sidebar-tree-list-item--active, .sidebar-tree-list-item {
     border-radius: 0 !important;
+}
+
+.sidebar-tree-list-item--active {
+    position: relative;
+    overflow:hidden;
+
+    &:before {
+        content: '';
+        background: linear-gradient(90deg, var(--red) 25%, var(--orange) 25%, var(--orange) 50%, var(--yellow) 50%, var(--yellow) 75%, var(--blue) 75%);
+        position: absolute;
+        width: 20px;
+        right: 0;
+        height: 100px;
+        transform: rotate(45deg);
+        bottom: -43px;
+    }
 }
 
 .v-field--focused, .v-field__wrapper:hover {
@@ -354,7 +371,7 @@ announcement-stats,
     content: '';
     position: absolute;
     background: linear-gradient(90deg, var(--red) 25%, var(--orange) 25%, var(--orange) 50%, var(--yellow) 50%, var(--yellow) 75%, var(--blue) 75%);
-    height: 3px;
+    height: 5px;
     width: 100%;
     bottom: 0;
 }
@@ -441,19 +458,53 @@ announcement-stats,
 
 
 .v-button--default, .v-button--blue {
-    background: var(--gold);
-    color: var(--primary-white);
+    color: var(--gold);
+    background: var(--primary-white);
     box-shadow: 5px 5px 0px 0px var(--red) !important;
     border-radius: 0 !important;
     box-sizing: content-box;
     outline: 2px solid var(--gold);
+}
+
+.v-header-cover-manage__item .v-button--default,
+.v-header-cover-manage__item,
+.subsite-card__actions button,
+.content-header__item button,
+.v-header__actions .v-button--default,
+.v-header__actions button,
+.writing__body button,
+.v-popup-container button {
+    outline: 2px solid var(--silver);
+    color: var(--silver) !important;
+    box-shadow: 5px 5px 0px 0px var(--blue) !important;
+    border-radius: 0 !important;
     
     &:hover {
-        color: var(--gold);
-        background: var(--primary-white);
-        box-shadow: 5px 5px 0px 0px var(--blue) !important;
-        outline: 2px solid var(--gold);
+        background: var(--primary-white) !important;
     }
+}
+
+.feed__container button.v-subscribe-button__subscribe, .feed__container button.v-subscribe-button__unsubscribe, .feed__container button.v-subscribe-button__subscribed {
+    color: var(--gold) !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    
+    &:hover {
+        background: transparent !important;
+    }
+} 
+
+.v-header__actions {
+    & svg {
+        color: var(--silver);
+        fill: var(--silver);
+    }
+}
+
+.subsite-card__actions svg {
+    fill: var(--silver);
+    color: var(--silver);
 }
 
 .head-notifies--showed .head-notifies__toggler .icon,
@@ -701,35 +752,23 @@ a.comment__avatar:hover + a.comment__author,
 @media (min-width: 860px) {
 .feed__item {
     & .content-feed {
-        box-shadow: 15px 15px 0px 0px var(--blue-light) !important;
-        &:hover {
-                box-shadow: 15px 15px 0px 0px var(--blue) !important;
-        }
+        box-shadow: 10px 10px 0px 0px var(--blue-light) !important;
     }
     &:nth-child(5n+1) {
         & .content-feed {
-           box-shadow: 15px 15px 0px 0px var(--red-light) !important;
-        &:hover {
-                 box-shadow: 15px 15px 0px 0px var(--red) !important;
-            }
+           box-shadow: 10px 10px 0px 0px var(--red-light) !important;
         }
         }
 
     &:nth-child(5n+2) {
         & .content-feed {
-            box-shadow: 15px 15px 0px 0px var(--yellow-light) !important;
-        &:hover {
-                 box-shadow: 15px 15px 0px 0px var(--yellow) !important;
-            }
+            box-shadow: 10px 10px 0px 0px var(--yellow-light) !important;
         }
         }
     }
     
     .content-feed {
-        box-shadow: 15px 15px 0px 0px var(--blue-light) !important;
-        &:hover {
-                box-shadow: 15px 15px 0px 0px var(--blue) !important;
-        }
+        box-shadow: 10px 10px 0px 0px var(--blue-light) !important;
     }
 }
 
@@ -738,7 +777,7 @@ a.comment__avatar:hover + a.comment__author,
  }
 
 .news-widget {
-    box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 1);
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
     border-radius: 0 !important;
 }
 
