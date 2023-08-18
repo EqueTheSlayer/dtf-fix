@@ -40,6 +40,7 @@ function addGlobalStyle(css) {
         --blue-light: rgba(21,75,121,0.3);
         --gold: #b39a49;
         --silver: #A4A9A3;
+        --grey: #B5B4B9;
     }
     
     .icon--ui_badge_plus * {
@@ -749,36 +750,61 @@ a.comment__avatar:hover + a.comment__author,
     color: var(--blue) !important;
 }
 
-@media (min-width: 860px) {
-.feed__item {
-    & .content-feed {
-        box-shadow: 10px 10px 0px 0px var(--blue-light) !important;
-    }
-    &:nth-child(5n+1) {
-        & .content-feed {
-           box-shadow: 10px 10px 0px 0px var(--red-light) !important;
-        }
-        }
-
-    &:nth-child(5n+2) {
-        & .content-feed {
-            box-shadow: 10px 10px 0px 0px var(--yellow-light) !important;
-        }
-        }
-    }
-    
-    .content-feed {
-        box-shadow: 10px 10px 0px 0px var(--blue-light) !important;
-    }
-}
-
 .l-island-round  {
     border-radius: 0 !important;
  }
 
 .news-widget {
-    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
     border-radius: 0 !important;
+}
+
+@media (min-width: 860px) {
+.app--content-feed.app--left-column-on.app--right-column-on .layout__left-column {
+    width: 250px;
+}
+
+.sidebar-tree-list {
+    position: relative;
+    padding-right: 30px;
+    
+    &:first-child {
+        &:before {
+            content: '';
+            width: calc(100% - 20px);
+            height: calc(100% + 12px);
+            position: absolute;
+            border-right: 4px solid var(--grey);
+            border-bottom: 4px solid var(--grey);
+            left: 0;
+            top: 0;
+        }
+    }
+    
+    &:not(:first-child):after {
+            content: '';
+            width: 10px;
+            height: 200px;
+            border-bottom: 4px solid;
+            border-right: 4px solid;
+            border-color: var(--grey);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    
+    &:first-child {
+        &:after {
+            content: '';
+            width: 10px;
+            height: 200px;
+            border-top: 4px solid;
+            border-right: 4px solid;
+            border-color: var(--grey);
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    }
 }
 
     `)
